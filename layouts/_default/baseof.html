@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ partial "html-meta.html" . -}}
 <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-<link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | relURL }}">
+<!-- link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | relURL }}" -->
+<link rel="stylesheet" type="text/css" href="{{ "/css/custom.css" | relURL }}">
 {{ with .Site.Params.favicon -}}
 <link rel="icon" href="{{ . }}" type="image/x-icon">
 {{ end -}}
@@ -33,6 +34,7 @@
   <article>
     {{ block "main" . }}{{- end }}
   </article>
+  {{ partial "sidebar" . }}
 </main>
 <footer>
   <div>
